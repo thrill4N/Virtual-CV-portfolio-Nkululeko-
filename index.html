@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nkululeko Khalishwayo - Virtual CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #fff;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    .section h2 {
+      border-bottom: 2px solid cyan;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .project, .edu, .exp {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .project:hover, .edu:hover, .exp:hover {
+      transform: scale(1.02);
+    }
+    .contact {
+      text-align: center;
+      padding: 30px;
+    }
+    .contact a {
+      margin: 10px;
+      color: cyan;
+      font-size: 1.1em;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="nkululeko-profile.jpg" alt="Profile photo of Nkululeko" class="profile-photo">
+  <h1>Nkululeko Khalishwayo</h1>
+  <p>Software & Database Developer | Cybersecurity & Networking Enthusiast</p>
+</header>
+
+<section class="section">
+  <h2>Profile Summary</h2>
+  <div class="exp">
+    <p>Aspiring software and database developer with strong academic grounding and hands-on project experience. Adept in full-stack development, cybersecurity, and solving classical algorithm problems. Known for disciplined teamwork, innovative thinking, and continuous self-improvement.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Education</h2>
+  <div class="edu">
+    <strong>Bachelor of Science in Information Technology</strong><br>
+    North-West University (Expected 2025)<br>
+    GPA: 71.51%
+  </div>
+</section>
+
+<section class="section">
+  <h2>Technical Skills</h2>
+  <div class="exp">
+    <p><strong>Programming:</strong> Java, C++, C#, Python, JavaScript, .NET</p>
+    <p><strong>Web Dev:</strong> HTML, CSS, Bootstrap, React.js, Node.js</p>
+    <p><strong>Databases:</strong> SQL, MySQL, SQLite, ERD Modelling</p>
+    <p><strong>Networking:</strong> Cisco Packet Tracer, Subnetting, Topology Design</p>
+    <p><strong>Tools:</strong> Git, GitHub, VS Code, IntelliJ, NetBeans, BlueJ</p>
+    <p><strong>Other:</strong> OOP, Agile, Troubleshooting</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Projects</h2>
+  <div class="project" onclick="window.open('https://github.com/thrill4N/Data-structures-and-algorithms-/blob/main/project%201.zip', '_blank')">
+    <strong>Data Structures and Algorithms:</strong> Classical problems in Java/C++/C#. Includes linked lists, stacks, queues, A* Search, Dijkstra’s Algorithm.
+  </div>
+  <div class="project" onclick="window.open('https://github.com/thrill4N/Resident-Classification-project', '_blank')">
+    <strong>OOP Project:</strong> Property Classification using Inheritance and Polymorphism (Java).
+  </div>
+  <div class="project" onclick="window.open('https://github.com/thrill4N/Offgrid-Game', '_blank')">
+    <strong>Database Project:</strong> Collaborative ERD design, schema normalization, CRUD scripting.
+  </div>
+  <div class="project" onclick="window.open('https://github.com/thrill4N', '_blank')">
+    <strong>Networking Project:</strong> Cisco Packet Tracer collaborative LAN infrastructure (Coming Soon).
+  </div>
+</section>
+
+<section class="section">
+  <h2>Extracurriculars</h2>
+  <div class="exp">
+    <p>🏀 NWU Eagles Basketball (2023 – Present)</p>
+    <p>👨‍💻 Contributor to Open Source GitHub Projects</p>
+    <p>🧠 Golden Key South Africa Member</p>
+    <p>💬 Active in NWU Computer Science Forum & Coding Hackathons</p>
+  </div>
+</section>
+
+<section class="section contact">
+  <h2>Contact</h2>
+  <p><i class="fas fa-envelope"></i> nkululekofreed11@gmail.com</p>
+  <p><i class="fas fa-phone"></i> +27 83 961 5007</p>
+  <p><a href="https://www.linkedin.com/in/nkululeko-khalishwayo-782566376/"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+  <p><a href="https://github.com/thrill4N"><i class="fab fa-github"></i> GitHub</a></p>
+</section>
+
+</body>
+</html>
