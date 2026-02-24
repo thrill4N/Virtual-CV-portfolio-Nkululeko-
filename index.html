@@ -1,137 +1,497 @@
-
 <!DOCTYPE html>
+<!--
+  index.html - Nkululeko Khalishwayo | Digital Portfolio
+  Inline comments added to explain page structure, external assets and major sections.
+  These comments are for documentation only and do not affect rendering.
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nkululeko Khalishwayo - Virtual CV</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      color: #fff;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    .profile-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
-    .section h2 {
-      border-bottom: 2px solid cyan;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    .project, .edu, .exp {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-    .project:hover, .edu:hover, .exp:hover {
-      transform: scale(1.02);
-    }
-    .contact {
-      text-align: center;
-      padding: 30px;
-    }
-    .contact a {
-      margin: 10px;
-      color: cyan;
-      font-size: 1.1em;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nkululeko Khalishwayo | Digital Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CDN: utility-first CSS framework used for rapid UI styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 relative z-10">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center py-20">
+            <div class="relative w-64 h-64 mb-8 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg shadow-purple-500/50">
+                <img src="images/WhatsApp Image 2025-07-25 at 18.46.07_c5f97e5b.jpg" alt="Nkululeko Khalishwayo" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-purple-500 opacity-20"></div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                NKULULEKO KHALISHWAYO
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-purple-300 mb-6">BSc Information Technology</h2>
+            <div class="flex space-x-4 mb-8">
+                <a href="#about" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Explore My Journey
+                </a>
+                <a href="#contact" class="px-6 py-3 border-2 border-purple-500 hover:bg-purple-900/30 rounded-full transition-all duration-300 transform hover:scale-105">
+                    Get In Touch
+                </a>
+            </div>
+            <div class="absolute bottom-10 animate-bounce">
+                <i data-feather="chevron-down" class="text-purple-400 w-8 h-8"></i>
+            </div>
+        </section>
 
-<header class="hero">
-  <img src="nkululeko-profile.jpg" alt="Profile photo of Nkululeko" class="profile-photo">
-  <h1>Nkululeko Khalishwayo</h1>
-  <p>Software & Database Developer | Cybersecurity & Networking Enthusiast</p>
-</header>
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    PROFESSIONAL SUMMARY
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></span>
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl">
+                <p class="text-lg leading-relaxed">
+                    Bachelor of Science in Information Technology graduate at North-West University and Golden Key lifetime member, with strong academic foundations in software development, data structures and algorithms, database systems, networking, and data engineering. Experienced in backend web development, NoSQL and relational databases, real-time data streaming, business intelligence dashboards, and secure network infrastructure design through multiple final-year collaborative and personal projects.
 
-<section class="section">
-  <h2>Profile Summary</h2>
-  <div class="exp">
-    <p>Aspiring software and database developer with strong academic grounding and hands-on project experience. Adept in full-stack development, cybersecurity, and solving classical algorithm problems. Known for disciplined teamwork, innovative thinking, and continuous self-improvement.</p>
-  </div>
-</section>
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Analytical, detail-oriented, and motivated to contribute in graduate programmes, internships, or entry-level IT roles.
+                </p>
+            </div>
+        </section>
 
-<section class="section">
-  <h2>Education</h2>
-  <div class="edu">
-    <strong>Bachelor of Science in Information Technology</strong><br>
-    North-West University (Expected 2025)<br>
-    GPA: 71.51%
-  </div>
-</section>
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <h2 class="text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    EDUCATION
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></span>
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-purple-400 mb-2">Bachelor of Science in Information Technology (BSc in Information Technology)</h3>
+                    <p class="text-gray-300 mb-1">North-West University (NWU)</p>
+                    <p class="text-gray-400">Completed: 2025 | GPA: 68% |  Academic Distinction: Golden Key International Honour Society Lifetime Member</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-3 text-purple-300">Relevant Coursework:</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                                <i class="fas fa-code mr-2 text-purple-500"></i>
+<span>Object-Oriented Programming</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-layer-group mr-2 text-purple-500"></i>
+<span>Data Structures and Algorithms</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-database mr-2 text-purple-500"></i>
+<span>Database Systems</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-globe mr-2 text-purple-500"></i>
+<span>Computer Networks</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-desktop mr-2 text-purple-500"></i>
+<span>Web Application Development</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-microchip mr-2 text-purple-500"></i>
+<span>Artificial Intelligence</span>
+                        </div>
+                        <div class="flex items-center">
+                                <i class="fas fa-hard-drive mr-2 text-purple-500"></i>
+<span>Operating Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="section">
-  <h2>Technical Skills</h2>
-  <div class="exp">
-    <p><strong>Programming:</strong> Java, C++, C#, Python, JavaScript, .NET</p>
-    <p><strong>Web Dev:</strong> HTML, CSS, Bootstrap, React.js, Node.js</p>
-    <p><strong>Databases:</strong> SQL, MySQL, SQLite, ERD Modelling</p>
-    <p><strong>Networking:</strong> Cisco Packet Tracer, Subnetting, Topology Design</p>
-    <p><strong>Tools:</strong> Git, GitHub, VS Code, IntelliJ, NetBeans, BlueJ</p>
-    <p><strong>Other:</strong> OOP, Agile, Troubleshooting</p>
-  </div>
-</section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    TECHNICAL SKILLS
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></span>
+                </span>
+            </h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="code" class="mr-2"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Python</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Java</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>C++</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>C#</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>SQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="section">
-  <h2>Projects</h2>
-  <div class="project" onclick="window.open('https://github.com/thrill4N/Data-structures-and-algorithms-/blob/main/project%201.zip', '_blank')">
-    <strong>Data Structures and Algorithms:</strong> Classical problems in Java/C++/C#. Includes linked lists, stacks, queues, A* Search, Dijkstra’s Algorithm.
-  </div>
-  <div class="project" onclick="window.open('https://github.com/thrill4N/Resident-Classification-project', '_blank')">
-    <strong>OOP Project:</strong> Property Classification using Inheritance and Polymorphism (Java).
-  </div>
-  <div class="project" onclick="window.open('https://github.com/thrill4N/Offgrid-Game', '_blank')">
-    <strong>Database Project:</strong> Collaborative ERD design, schema normalization, CRUD scripting.
-  </div>
-  <div class="project" onclick="window.open('https://github.com/thrill4N', '_blank')">
-    <strong>Networking Project:</strong> Cisco Packet Tracer collaborative LAN infrastructure (Coming Soon).
-  </div>
-</section>
+                <!-- Backend & Web Technologies -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="server" class="mr-2"></i>
+                        Backend & Web
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>RESTful APIs</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Supabase</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="section">
-  <h2>Extracurriculars</h2>
-  <div class="exp">
-    <p>🏀 NWU Eagles Basketball (2023 – Present)</p>
-    <p>👨‍💻 Contributor to Open Source GitHub Projects</p>
-    <p>🧠 Golden Key South Africa Member</p>
-    <p>💬 Active in NWU Computer Science Forum & Coding Hackathons</p>
-  </div>
-</section>
+                <!-- Databases -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="database" class="mr-2"></i>
+                        Databases
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Microsoft SQL Server</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>MongoDB Atlas</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="section contact">
-  <h2>Contact</h2>
-  <p><i class="fas fa-envelope"></i> nkululekofreed11@gmail.com</p>
-  <p><i class="fas fa-phone"></i> +27 83 961 5007</p>
-  <p><a href="https://www.linkedin.com/in/nkululeko-khalishwayo-782566376/"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
-  <p><a href="https://github.com/thrill4N"><i class="fab fa-github"></i> GitHub</a></p>
-</section>
+                <!-- Data Streaming & Visualization -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="activity" class="mr-2"></i>
+                        Data & Visualization
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Apache Kafka</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Power BI</span>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Networking & Infrastructure -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="globe" class="mr-2"></i>
+                        Networking
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Cisco Packet Tracer</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>LAN design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>VLANs</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Subnetting</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>OSPF</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>DHCP</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>NAT</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>DNS</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                            <span>VPNs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400 flex items-center">
+                        <i data-feather="tool" class="mr-2"></i>
+                        Tools
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Git</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Docker</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-pink-500 mr-2"></div>
+                            <span>Google Colab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    ACADEMIC PROJECTS
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></span>
+                </span>
+            </h2>
+            
+            <!-- Project 1 -->
+            <div class="max-w-4xl mx-auto mb-16 bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                            <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg h-full min-h-[200px] flex items-center justify-center">
+                            <i class="fas fa-store fa-3x text-white"></i>
+</div>
+</div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-2 text-purple-400">NWU Student Marketplace</h3>
+                        <p class="text-gray-300 mb-4 italic">Full-Stack Web Application | Backend Developer</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Contributed to the development of a full-stack student marketplace web application enabling secure student-to-student trading</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Primarily responsible for backend development using Node.js and Express, implementing RESTful APIs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Integrated a PostgreSQL database and worked with Supabase for backend services</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://github.com/thrill4N/nwu-student-market" class="inline-flex items-center text-purple-400 hover:text-purple-300">
+                                <i data-feather="github" class="mr-2"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="max-w-4xl mx-auto mb-16 bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                            <div class="bg-gradient-to-br from-pink-600 to-purple-600 rounded-lg h-full min-h-[200px] flex items-center justify-center">
+                            <i class="fas fa-chart-line fa-3x text-white"></i>
+</div>
+</div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-2 text-purple-400">Advanced Database Development</h3>
+                        <p class="text-gray-300 mb-4 italic">MongoDB Atlas, Apache Kafka & Power BI</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Designed and implemented a scalable NoSQL database solution using MongoDB Atlas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Implemented Apache Kafka to stream new user-generated data into MongoDB Atlas in real time</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Integrated MongoDB Atlas with Power BI to create interactive dashboards and analytical reports</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://github.com/thrill4N/ClearVue-Sales-Report" class="inline-flex items-center text-purple-400 hover:text-purple-300">
+                                <i data-feather="github" class="mr-2"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                            <div class="bg-gradient-to-br from-purple-700 to-blue-600 rounded-lg h-full min-h-[200px] flex items-center justify-center">
+                            <i class="fas fa-network-wired fa-3x text-white"></i>
+</div>
+</div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-2 text-purple-400">Network Infrastructure Design</h3>
+                        <p class="text-gray-300 mb-4 italic">Cisco Packet Tracer</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Designed a secure and scalable LAN for a 100 × 50 metre office environment using Cisco Packet Tracer</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Configured VLANs to enforce interdepartmental segmentation and security</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1 flex-shrink-0"></i>
+                                <span>Implemented OSPF routing, DHCP, NAT, DNS, and VPNs for comprehensive network functionality</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://github.com/thrill4N/Packet-Tracer-project" class="inline-flex items-center text-purple-400 hover:text-purple-300">
+                                <i data-feather="github" class="mr-2"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <h2 class="text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    GET IN TOUCH
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></span>
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-purple-400">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-purple-500 mr-3"></i>
+<span>khalishwayoN@outlook.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-purple-500 mr-3"></i>
+<span>083 9615007</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-500 mr-3"></i>
+<span>South Africa</span>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-4 text-purple-400">Connect With Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/nkululeko-khalishwayo-782566376" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-purple-600 flex items-center justify-center transition-colors duration-300">
+                                    <i class="fab fa-linkedin-in text-white"></i>
+</a>
+                                <a href="https://github.com/thrill4N" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-purple-600 flex items-center justify-center transition-colors duration-300">
+                                    <i class="fab fa-github text-white"></i>
+</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-purple-400">Send Me a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"></textarea>
+                            </div>
+                            <button type="submit" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <!-- 3D Background Elements -->
+    <div id="floating-elements"></div>
+<script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Initialize Vanta.js animated background
+</script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
 </body>
 </html>
